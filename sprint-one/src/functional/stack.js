@@ -9,8 +9,6 @@ var Stack = function() {
   someInstance.push = function(value) {
     counter++;
     storageKeys.push(value);
-    // return storageKeys;
-    // console.log(storageKeys)
   };
 
   someInstance.pop = function() {

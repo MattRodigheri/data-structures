@@ -7,7 +7,7 @@ var Stack = function() {
   newStack.pop = stackMethods.pop;
   newStack.size = stackMethods.size;
 
-  var storageKeys = Object.keys(newStack.storage);
+  newStack.storageKeys = Object.keys(newStack.storage);
 
   return newStack;
 };
@@ -16,6 +16,7 @@ var stackMethods = {};
 
 stackMethods.push = function(value) {
   this.counter++;
+  //console.log(storageKeys)
   this.storageKeys.push(value);
 }
 
@@ -24,7 +25,7 @@ stackMethods.pop = function() {
   if (this.counter < 0) {
     this.counter = 0;
   }
-  //return this.storageKeys.pop();
+  return this.storageKeys.pop();
 }
 
 stackMethods.size = function() {

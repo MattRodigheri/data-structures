@@ -1,7 +1,25 @@
 class Queue {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
   constructor() {
+    this.counter = 0;
+    this.storage = {}
+    this.storageKeys = Object.keys(this.storage);
+  }
+
+  enqueue(value) {
+    this.counter++;
+    this.storageKeys.push(value);
+  }
+
+  dequeue() {
+    this.counter--;
+    if (this.counter < 0) {
+      this.counter = 0;
+    }
+    return this.storageKeys.shift();
+  }
+
+  size() {
+    return this.counter;
   }
 
 }

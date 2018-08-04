@@ -6,10 +6,18 @@ var Graph = function() {
 
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
+  this[node] = {};
+  this[node]['value'] = node;
+  this[node]['edges'] = [];
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(node) {
+  if (this[node]) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 // Removes a node from the graph.
@@ -35,5 +43,3 @@ Graph.prototype.forEachNode = function(cb) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
-
-
